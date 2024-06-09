@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>INS-Flagger</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Space+Grotesk:wght@300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"/>
+    
+  </head>
+  <body class="body-flex">
+    <!--NAVBAR  -->
+    <div class="navbar-cont">
+      <nav class="navbar">
+        <div class="logo-cont">
+          <a href="#home" onclick="toggleHome()">
+            <img
+              class="logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Indian_Navy_crest.svg/1200px-Indian_Navy_crest.svg.png"
+          /></a>
+        </div>
+
+        <div class="navlink-div">
+          <div class="navlink-cont" onclick="toggleAbout()">
+            <a href="#about" class="navlink" onclick="toggleAbout()">About</a>
+          </div>
+          <div class="navlink-cont">
+            <a href="#login" class="navlink" onclick="toggleLogin()">Login</a>
+          </div>
+          <div class="navlink-cont">
+            <a href="#signup" class="navlink" onclick="toggleSignUp()">Sign Up</a>
+          </div>
+          <div class="navlink-cont">
+            <a href="#contact" class="navlink" onclick="toggleContact()" >Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="home-page-cont">
+      <!--VIDEO  -->
+      <div id="home" class="video-cont">
+        <div class="video-wrapper">
+          <video class="video" autoplay muted loop id="myVideo">
+            <source src="Navy Video.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay"></div>
+        </div>
+        <div class="banner-text-cont">
+          <h1 class="banner-text">
+            Indian Naval Ship <br /><mark>Flagger</mark>
+          </h1>
+          <p class="banner-para">
+            Welcome to INS - Flagger, an innovative maritime security solution
+            designed to enhance the surveillance capabilities of the Indian
+            Navy. In today's complex maritime environment, ensuring the safety
+            and sovereignty of national waters is paramount. INS - Flagger
+            leverages cutting-edge machine learning technology to provide an
+            advanced, reliable, and efficient system for detecting unauthorized
+            naval ships entering designated maritime zones.
+          </p>
+        </div>
+      </div>
+
+      <!--ABOUT  -->
+      <div id="about" class="about">
+        <h1 class="about-head">About</h1>
+        <p class="about-para">
+          Welcome aboard INS - Flagger, your partner in safeguarding the vast
+          maritime territories of India. In an era where maritime security is of
+          utmost importance, INS - Flagger stands as a beacon of technological
+          prowess, dedicated to ensuring the integrity of our nation's waters.
+        </p>
+
+        <h1 class="about-head2">Our Mission</h1>
+        <p class="about-para2">
+          Our mission is to empower the Indian Navy with a vigilant guardian
+          capable of autonomously identifying and responding to potential
+          threats. INS - Flagger harnesses the power to analyze & the detect any
+          unusual activity within designated maritime zones.
+        </p>
+
+        <h1 class="about-head2">Features</h1>
+        <div class="features">
+          <div class="f1">
+            <h1 class="f1-head">Real-time Surveillance</h1>
+          </div>
+
+          <div class="f2">
+            <h1 class="f1-head">Automated Alerting</h1>
+          </div>
+
+          <div class="f3">
+            <h1 class="f1-head">Threat Detection</h1>
+          </div>
+
+          <div class="f4">
+            <h1 class="f1-head">Geofencing</h1>
+          </div>
+        </div>
+      </div>
+
+      <!--LOGIN  -->
+      <div class="login-full">
+        <div id="login" class="login-container">
+          <div class="login-cont">
+            <p class="login">Welcome to INS Flagger</p>
+            <div class="login-form-cont">
+              <form id="loginForm" action="/login" method="post" onsubmit="login(event)">
+                  <div class="form-row">
+                <div class="form-row">
+                  <div class="label-cont">
+                    <label class="label" for="username">Username:</label>
+                  </div>
+                  <div class="input-cont">
+                    <input class="input-field" placeholder="Enter your email" type="text" id="username" name="username" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="label-cont">
+                    <label class="label" for="password">Password:</label>
+                  </div>
+                  <div class="input-cont">
+                    <input class="input-field" placeholder="Enter password" type="password" id="password" name="password" required>
+                  </div>
+                </div><br>
+                <div class="btn-cont">
+                  <button class="submit-button" href="network.html" type="submit">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--SIGN UP  -->
+      <div class="login-full">
+        <div id="signup" class="signup-container">
+          <div class="login-cont">
+            <p class="login">Sign Up to INS Flagger</p>
+            <div class="login-form-cont">
+              <form id="signupForm" action="/signup" method="post" onsubmit="signup(event)">
+                <div class="form-row">
+                  <div class="label-cont">
+                    <label class="s-label" for="username">Username:</label>
+                  </div>
+                  <div class="input-cont">
+                    <input class="s-input-field" placeholder="Enter your email" type="text" id="username" name="username" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="label-cont">
+                    <label class="s-label" for="password">Password:</label>
+                  </div>
+                  <div class="input-cont">
+                    <input class="s-input-field" placeholder="Enter password" type="password" id="password" name="password" required>
+                  </div>
+                </div><br>
+
+                <div class="s-form-row">
+                  <div class="label-cont">
+                    <label class="s-label" for="password">Confirm Password:</label>
+                  </div>
+                  <div class="input-cont">
+                    <input class="s-input-field" placeholder="Confirm password" type="password" id="password" name="password" required>
+                  </div>
+                </div><br>
+                
+                <div class="btn-cont">
+                  <button class="submit-button" href="network.html" type="submit">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--CONTACT  -->
+      <div class="contact-full">
+        <div id="contact" class="contact-cont">
+          <h1 class="contact-head">Contact</h1>
+          <div class="contact-pcont">
+            <p class="contact-para1">We'd love to hear from you! Whether you have questions, need support, or want to learn more about INS - Flagger, our team is here to assist you. Reach out to us through any of the following channels:</p>
+
+            
+            <ul class="contact-para2">
+              <li class="list">General Inquiries: <a>info@insflagger.com</a></li>
+              <li class="list">Support: <a>support@insflagger.com</a></li>
+              <li class="list">Sales: <a>sales@insflagger.com</a></li>
+            </ul>
+
+            <p class="contact-para1">Feel free to contact us through any of these methods, and our dedicated team will respond to you as soon as possible. Thank you for choosing INS - Flagger for your maritime security needs!</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
