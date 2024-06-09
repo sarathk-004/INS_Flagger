@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ship Details</title>
+  <style>
+    table {
+       border: 1px solid black;
+       border-collapse: collapse;
+       width: 100%;
+       font-size: 20px;
+       padding: 5px;
+    }
+    
+    th, td {
+    
+     border: 1px solid black;
+    }
+    
+    th {
+        background-color: #062f62;
+        color: white;
+    
+    }
+    
+    td {
+    padding-left: 5px;
+    
+    }
+  
+  
+  </style>
+
+
+</head>
+<body>
+	
+	<h2 style="color:#062f62; text-align: center;">Ship Details</h2>
+	<br>
+   <table>
+	
+       <tr>
+		<th>Ship Name</th>
+         <th>Country entering from</th>
+         <th>Latitude</th>
+         <th>Longitude</th>
+         <th>Port Reported At</th>
+         <th>State of the Port</th>
+         <th>Prominent color on the Ship</th>
+		 <th>Containers visible on the Ship</th>
+		 <th>Approximate length of the Ship in Feet</th>
+		 <th>Approximate width of the Ship in Feet</th>
+		 <th>Approximate draft of the Ship in Feet</th>
+		 <th>Approximate capacity of the Ship in tons</th>
+		 <th>Approximate number of people on the Ship Visible</th>
+       
+       </tr>
+	   
+        <tr  th:each="pd : ${shipDetails}">
+           <td  th:text="${pd.shipName}"></td>
+           <td  th:text="${pd.countryEnteringFrom}"></td>
+           <td  th:text="${pd.latitude}"></td>
+           <td  th:text="${pd.longitude}"></td>
+           <td  th:text="${pd.portReportedAt}"></td>
+           <td  th:text="${pd.stateOfThePort}"></td>
+		   <td  th:text="${pd.prominentColorOnTheShip}"></td>
+		   <td  th:text="${pd.containersVisibleOnTheShip}"></td>
+		   <td  th:text="${pd.approximateLengthOfTheShipInFeet}"></td>
+		   <td  th:text="${pd.approximateWidthOfTheShipInFeet}"></td>
+		   <td  th:text="${pd.approximateDraftOfTheShipInFeet}"></td>
+		   <td  th:text="${pd.approximateCapacityOfTheShipInTons}"></td>
+		   <td  th:text="${pd.approximateNumberOfPeopleOnTheShipVisible}"></td>
+        </tr>
+   
+   </table>
+
+</body>
+</html>

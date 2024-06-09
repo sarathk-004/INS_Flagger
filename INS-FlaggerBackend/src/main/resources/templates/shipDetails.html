@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship details entry screen</title>
+    <link rel="stylesheet" th:href="@{../styles.css}">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alata&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<div class="body-flex">
+	<div class="navbar-cont">
+      <nav class="navbar">
+        <div class="logo-cont">
+          <a href="#home" onclick="toggleHome()">
+            <img
+              class="logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Indian_Navy_crest.svg/1200px-Indian_Navy_crest.svg.png"
+          /></a>
+        </div>
+
+        <div class="navlink-div">
+          <div class="navlink-cont">
+            <a href="#livemap" class="navlink" onclick="toggleMap()">Live Map</a>
+          </div>
+          <div class="navlink-cont">
+            <a href="#shipEntry" class="navlink-se active" onclick="toggleShipEntry()">Ship Entry</a>
+          </div>
+          <div class="navlink-cont">
+            <a href="#shipFlagger" class="navlink" onclick="toggleShipFlagger()">Ship Flagger</a>
+          </div>
+          <div class="navlink-cont">
+            <a href="index.html" class="navlink" onclick="toggleHome()">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+	
+	  
+	<div class="form-full"></div>
+	    <div class="form-cont">
+	        <h2 class="form-head">Ship details entry screen</h2>
+	        
+	        <div th:if="${message != null}" class="message"> 
+	           [[${message}]]
+	        </div>
+	        
+			
+	        <form 
+	        
+	        th:action="@{/shipDetails}" 
+	        method="post"
+	        role="form"
+	        th:object="${shipDetails}"
+	        >
+	
+				<div class="data-cont">
+	            	<div class="input-group">
+	                	<label class="label" for="shipName">Ship Name:</label>
+	                	<input class="input-field" th:field="*{shipName}" type="text" id="shipName" name="shipName" placeholder="Enter ship name" required>
+	            	</div>
+					
+					
+					<div class="input-group">
+					    <label class="label" for="countryEnteringFrom">Country entering from:</label>
+						<select class="input-field" name="countryEnteringFrom"  input th:field="*{countryEnteringFrom}" type="text" id="countryEnteringFrom" placeholder="Country entering from" required>
+						    <option value="SriLanka">SriLanka</option>
+						    <option value="Maynmar">Maynmar</option>
+							<option value="Thailand">Thailand</option>
+							<option value="Malaysia">Malaysia</option>
+							<option value="Oman">Oman</option>
+							<option value="Iran">Iran</option>
+							<option value="Maldives">Maldives</option>
+							<option value="China">China</option>
+							<option value="Afghanisthan">Afghanisthan</option>
+							<option value="Bangladesh">Bangladesh</option>
+							<option value="SriLanka">SriLanka</option>
+							<option value="Indonesia">Indonesia</option>
+							<option value="Pakisthan">Pakisthan</option>
+						  </select>
+					</div>
+					<div class="input-group">
+						<label class="label" for="latitude">Latitude:</label>
+						<input class="input-field" th:field="*{latitude}" type="text" id="latitude" name="latitude" placeholder="Enter latitude" required>
+					</div>
+					<div class="input-group">
+						<label class="label" for="longitude">Longitude:</label>
+						<input class="input-field" th:field="*{longitude}" type="text" id="longitude" name="longitude" placeholder="Enter longitude" required>
+					</div>
+					
+					<div class="input-group">
+					    <label class="label" for="portReportedAt">Port reported at:</label>
+						<select class="input-field" name="portReportedAt"  input th:field="*{portReportedAt}" type="text" id="portReportedAt" placeholder="Port reported at" required>
+						    <option value="Tuticorin">Tuticorin</option>
+						    <option value="PortBlair">PortBlair</option>
+							<option value="Mangalore">Mangalore</option>
+							<option value="Mormugao">Mormugao</option>
+							<option value="MumbaiPortTrust">MumbaiPortTrust</option>
+							<option value="Paradip">Paradip</option>
+							<option value="Visakhapatnam">Visakhapatnam</option>
+							<option value="Chennai">Chennai</option>
+							<option value="Kochi">Kochi</option>
+							<option value="Kolkata">Kolkata</option>
+							<option value="Kandla">Kandla</option>
+						  </select>
+					</div>
+					
+					<div class="input-group">
+					    <label class="label" for="stateOfThePort">State of the port:</label>
+						<select class="input-field" name="stateOfThePort"  input th:field="*{stateOfThePort}" type="text" id="stateOfThePort" placeholder="State of the port" required>
+						    <option value="TamilNadu">TamilNadu</option>
+						    <option value="Andaman&NicobarIslands">Andaman&NicobarIslands</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Goa">Goa</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Odisha">Odisha</option>
+							<option value="AndhraPradesh">AndhraPradesh</option>
+							<option value="Kerala">Kerala</option>
+							<option value="WestBengal">WestBengal</option>
+							<option value="Gujarat">Gujarat</option>
+						  </select>
+					</div>
+					
+	
+					<div class="input-group">
+					    <label class="label" for="prominentColorOnTheShip">Prominent color on the Ship:</label>
+						<select class="input-field" name="prominentColorOnTheShip"  input th:field="*{prominentColorOnTheShip}" type="text" id="prominentColorOnTheShip" placeholder="Prominent color on the Ship" required>
+						    <option value="Black">Black</option>
+							<option value="Blue">Blue</option>
+							<option value="Orange">Orange</option>
+							<option value="Yellow">Yellow</option>
+							<option value="Green">Green</option>
+							<option value="White">White</option>
+						  </select>
+					</div>
+					
+	
+					<div class="input-group">
+					    <label class="label" for="containersVisibleOnTheShip">Containers visible on the Ship:</label>
+						<select class="input-field" name="containersVisibleOnTheShip"  input th:field="*{containersVisibleOnTheShip}" type="text" id="containersVisibleOnTheShip" placeholder="Containers visible on the Ship" required>
+						    <option value="Yes">Yes</option>
+							<option value="No">No</option>
+						  </select>
+					</div>
+					
+					<div class="input-group">
+						<label class="label" for="approximateLengthOfTheShipInFeet">Approximate length of the Ship in feet:</label>
+						<input class="input-field" th:field="*{approximateLengthOfTheShipInFeet}" type="text" id="approximateLengthOfTheShipInFeet" name="approximateLengthOfTheShipInFeet" placeholder="Approximate length of the Ship in feet" required>
+					</div>
+	
+					<div class="input-group">
+						<label class="label" for="approximateWidthOfTheShipInFeet">Approximate width of the Ship in feet:</label>
+						<input class="input-field" th:field="*{approximateWidthOfTheShipInFeet}" type="text" id="approximateWidthOfTheShipInFeet" name="approximateWidthOfTheShipInFeet" placeholder="Approximate width of the Ship in feet" required>
+					</div>
+	
+					<div class="input-group">
+						<label class="label" for="approximateDraftOfTheShipInFeet">Approximate draft of the Ship in feet:</label>
+						<input class="input-field" th:field="*{approximateDraftOfTheShipInFeet}" type="text" id="approximateDraftOfTheShipInFeet" name="approximateDraftOfTheShipInFeet" placeholder="Approximate draft of the Ship in feet" required>
+					</div>
+	
+					<div class="input-group">
+						<label class="label" for="approximateCapacityOfTheShipInTons">Approximate capacity of the ship in tons:</label>
+						<input class="input-field" th:field="*{approximateCapacityOfTheShipInTons}" type="text" id="approximateCapacityOfTheShipInTons" name="approximateCapacityOfTheShipInTons" placeholder="Approximate capacity of the ship in tons" required>
+					</div>
+					
+					<div class="input-group">
+						<label class="label" for="approximateNumberOfPeopleOnTheShipVisible">Approximate number of people on the Ship Visible:</label>
+						<input class="input-field" th:field="*{approximateNumberOfPeopleOnTheShipVisible}" type="text" id="approximateNumberOfPeopleOnTheShipVisible" name="approximateNumberOfPeopleOnTheShipVisible" placeholder="Approximate number of people on the Ship Visible" required>
+					</div>
+					
+					<!--<div class="input-group">
+					    <label class="label" for="isFlagged">Is Flagged:</label>
+						<select class="input-field" name="isFlagged"  input th:field="*{isFlagged}" type="text" id="isFlagged" placeholder="Is Flagged" required>
+						    <option value="Yes">Yes</option>
+						    <option value="No">No</option>
+						  </select>
+					</div>-->
+					
+					<!--<div class="input-group">
+						<label class="label" for="accuracyOfTheCurrentModel">Ship Name:</label>
+						<input class="input-field" th:field="*{accuracyOfTheCurrentModel}" type="text" id="accuracyOfTheCurrentModel" name="accuracyOfTheCurrentModel" placeholder="Accuracy of the current model" required>
+					</div>-->
+					
+	
+				
+	            <button type="submit" class="btn">Submit</button>
+	        </form>
+			</div>
+	    </div>
+	</div>
+	<script>
+	        // JavaScript function to navigate to network.html
+	        document.getElementById('networkLink').addEventListener('click', function(event) {
+	            event.preventDefault(); // Prevent the default action of navigating to the href
+	            window.location.href = 'network.html'; // Navigate to network.html
+	        });
+			
+			
+	    </script>
+</body>
+
+</html>
